@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tunic-inspired Game - Three.js</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+				font-family: 'Courier New', monospace;
+				background: #000;
+			}
+			#info {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				color: white;
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+				background: rgba(0, 0, 0, 0.5);
+				padding: 15px;
+				border-radius: 8px;
+				backdrop-filter: blur(5px);
+				z-index: 100;
+			}
+			#info h1 {
+				margin: 0 0 10px 0;
+				font-size: 24px;
+				color: #ffd93d;
+			}
+			#info p {
+				margin: 5px 0;
+				font-size: 14px;
+			}
+			#info .controls {
+				margin-top: 10px;
+				padding-top: 10px;
+				border-top: 1px solid rgba(255, 255, 255, 0.3);
+			}
+			a {
+				color: #4fc3f7;
+				text-decoration: none;
+			}
+			a:hover {
+				color: #80d8ff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="info">
+			<h1>🦊 Tunic-Inspired Adventure</h1>
+			<p>Explore o mundo com a raposa!</p>
+			<div class="controls">
+				<p><strong>Controles:</strong></p>
+				<p>WASD ou Setas - Mover</p>
+			</div>
+		</div>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "/node_modules/three/build/three.module.js",
+					"three/addons/": "/node_modules/three/examples/jsm/"
+				}
+			}
+		</script>
+
+		<script type="module" src="./src/main.js"></script>
+	</body>
+</html>
