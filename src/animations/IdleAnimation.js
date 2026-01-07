@@ -71,6 +71,23 @@ export class IdleAnimation {
         if (Math.sin(this.time * 0.3) > 0.95) {
             parts.headGroup.rotation.y = Math.sin(this.time * 5) * 0.3;
         }
+
+        // ========== ARMAS ==========
+        // Espada fica mais relaxada quando idle
+        if (parts.sword) {
+            const breathe = Math.sin(this.time * 2) * 0.01;
+            parts.sword.position.y = parts.sword.position.y * 0.95 + (0.35 + breathe) * 0.05;
+            parts.sword.rotation.x = parts.sword.rotation.x * 0.95 + (-0.5) * 0.05;
+            parts.sword.rotation.y *= 0.95;
+        }
+
+        // Escudo retorna à posição de descanso
+        if (parts.shield) {
+            const breathe = Math.sin(this.time * 2) * 0.01;
+            parts.shield.position.y = parts.shield.position.y * 0.95 + (0.4 + breathe) * 0.05;
+            parts.shield.rotation.x *= 0.95;
+            parts.shield.rotation.z = parts.shield.rotation.z * 0.95 + (-0.2) * 0.05;
+        }
     }
 
     reset() {

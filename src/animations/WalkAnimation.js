@@ -71,6 +71,35 @@ export class WalkAnimation {
         if (parts.scarf) {
             parts.scarf.rotation.z = Math.sin(this.time * 0.6 + 0.5) * 0.12;
         }
+
+        // ========== ARMAS ==========
+        // Espada balança com o movimento
+        if (parts.sword) {
+            parts.sword.position.set(
+                0.22,
+                0.35 + Math.sin(this.time) * 0.03,
+                0.15
+            );
+            parts.sword.rotation.set(
+                -0.5 + Math.sin(this.time) * 0.1,
+                Math.sin(this.time * 0.5) * 0.05,
+                -0.3
+            );
+        }
+
+        // Escudo balança defensivamente
+        if (parts.shield) {
+            parts.shield.position.set(
+                -0.25,
+                0.4 + Math.sin(this.time + Math.PI) * 0.02,
+                0.1
+            );
+            parts.shield.rotation.set(
+                Math.sin(this.time + Math.PI) * 0.08,
+                0.5,
+                -0.2 + Math.sin(this.time) * 0.05
+            );
+        }
     }
 
     reset() {
